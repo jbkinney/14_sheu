@@ -10,7 +10,7 @@ bioRxiv doi: http://dx.doi.org/10.1101/021832.
 
 #### Raw data
 
-Raw sequence reads are available on the NCBI Sequences Reach Archive, accesion number [SRA279689](http://www.ncbi.nlm.nih.gov/sra/?term=SRA279689). Data for seven experiments are provided: 15.02.25_sheu, 14.11.25_sheu, 14.10.15_sheu, 14.08.20_sheu, 14.07.28_sheu, 14.04.14_sheu, 13.05.28_sheu. The file `data/sample_info.txt` describes which samples are contained in each dataset. Molecular barcodes are listed in `data/barcodes.txt`.
+Raw sequence reads are available on the NCBI Sequence Read Archive, accesion number [SRA279689](http://www.ncbi.nlm.nih.gov/sra/?term=SRA279689). Data for seven experiments are provided: 15.02.25_sheu, 14.11.25_sheu, 14.10.15_sheu, 14.08.20_sheu, 14.07.28_sheu, 14.04.14_sheu, 13.05.28_sheu. The file `data/sample_info.txt` describes which biological samples are contained in each dataset. Molecular barcodes are listed in `data/barcodes.txt`.
 
 #### Processed data
 
@@ -20,7 +20,7 @@ Non-smoothed replication profiles are stored in the files `data/heights_XX.XX.XX
 
 The data analysis pipeline consists of two parts: 
 
-1. A preprocessing pipeline that maps Illumina reads to the yeast genome and computes non-smoohed replication profiles.
+1. A preprocessing pipeline that maps Illumina reads to the yeast genome and computes non-smoothed replication profiles.
  
 2. An analysis pipeline that computes smoothed replicaiton profiles, returns measurements of replication peak widths and heights, and generates the plots shown in the paper.
 
@@ -37,13 +37,13 @@ Doing this maps the Illumina reads in the mock data set `preprocessing/data/samp
 
 #### Analysis
 
-The non-smoothed replication profiles generated from all seven experiments are stored in the `data/heights_XX.XX.XX.txt` files. To concatenate these files into the single file `data/heights_all.txt` used in subsequent analysis, execute the Python script
+The non-smoothed replication profiles generated from all seven experiments are provided in the `data/heights_XX.XX.XX.txt` files. To concatenate these files into the single file `data/heights_all.txt` used in subsequent analysis, execute the Python script
 
 ```
 $ ./script_0_concatenate_height_files.py
 ```
 
-To compute smoothed replication profiles using the data in `data/heights_all.txt`, exectute the following at the Matlab commandline (indicated by `>>`):
+To compute smoothed replication profiles using the data in `data/heights_all.txt`, execute the following at the Matlab command line (indicated by `>>`):
 
 ```
 >> run script_1_compute_abundances.m
@@ -56,13 +56,13 @@ results/result_peak_heights.txt
 results/result_peak_widths.txt
 ```
 
-which contain the measurements of peak heights and widths height for all of the samples. To then make plots, execute the following at the Matlab commandline:
+which contain the measurements of peak heights and widths for all of the samples. To then make plots, execute the following at the Matlab command line:
 
 ```
 >> run script_2_run_analysis.m
 ```
 
-Currently, line 5 of `script_2_run_analysis.m` sets `run_test_analysis = true`. This tells the script to only produce one of each type of plot (for testing purposes). To instead have `script_2_run_analysis.m` generate all of the plots shown in the paper, change this line to `run_test_analysis = false`. Note: the specific plots to generate are specified in the files `specifications/set_plot_specifications_*.m`. 
+Currently, line 5 of `script_2_run_analysis.m` sets `run_test_analysis = true`. This tells the script to only produce one of each type of plot (for testing purposes). To instead have `script_2_run_analysis.m` generate all of the plots shown in the paper, change this line to `run_test_analysis = false`. Note: the specific plots generated are specified in the files `specifications/set_plot_specifications_*.m`. 
 
 Finally, to remove all files created by these analysis scripts, run
 
