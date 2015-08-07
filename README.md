@@ -41,7 +41,7 @@ The non-smoothed replication profiles from all experiments are stored in the `da
 $ ./script_0_concatenate_height_files.py
 ```
 
-To compute smoothed replication profiles for all samples using the data in `data/heights_all.txt', exectute the following at the matlab commandline:
+To compute smoothed replication profiles for all samples using the data in `data/heights_all.txt`, exectute the following at the Matlab commandline (indicated by `>>`):
 
 ```
 >> run script_1_compute_abundances.m
@@ -54,12 +54,26 @@ results/result_peak_heights.txt
 results/result_peak_widths.txt
 ```
 
-which contain measurements of peak width and height for all of the samples analyzed. 
+which contain measurements of peak width and peak height for all of the samples analyzed. 
 
-To make plots, open Matlab and, at the MATLAB commandline (indicated by >>), execute
+To then make plots, execute the following at the Matlab commandline:
 
-	>> run script_2_run_analysis.m
+```
+>> run script_2_run_analysis.m
+```
 
-4. To remove all files created by these scripts, run
+Currently, line 5 of `script_2_run_analysis.m` is 
+```
+run_test_analysis = true;
+```
+This tells the script to only produce one of each type of plot (for testing purposes). To instead have `script_2_run_analysis.m` generate all of the plots shown in the paper, change this line to
+```
+run_test_analysis = false;
+```
+Note: the specific plots generated are specified in the files `specifications/set_plot_specifications_*.m`. 
 
-	$ ./script_3_cleanup.sh
+Finally, to remove all files created by these analysis scripts, run
+
+```
+$ ./script_3_cleanup.sh
+```
