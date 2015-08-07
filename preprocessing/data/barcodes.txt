@@ -1,0 +1,8 @@
+A    TGCG
+B    GCAC
+C    CTGG
+D    ACTG
+E    TAGC
+F    CACG
+G    GCTA
+H    ATAC
