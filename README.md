@@ -10,7 +10,7 @@ bioRxiv doi: http://dx.doi.org/10.1101/021832.
 
 #### Raw data
 
-Raw sequence read data is available at on the NCBI Short Reach Archive, accesion number SRA279689. This contains raw Illumina sequence data for seven experiments: 15.02.25_sheu, 14.11.25_sheu, 14.10.15_sheu, 14.08.20_sheu, 14.07.28_sheu,	14.04.14_sheu,	13.05.28_sheu.
+Raw sequence read data is available at on the NCBI Short Reach Archive, accesion number [SRA279689](http://www.ncbi.nlm.nih.gov/sra/?term=SRA279689). This contains raw Illumina sequence data for seven experiments: 15.02.25_sheu, 14.11.25_sheu, 14.10.15_sheu, 14.08.20_sheu, 14.07.28_sheu, 14.04.14_sheu, 13.05.28_sheu. The file `data/sample_info.txt` describes which samples are contained in each dataset. Molecular barcodes are listed in `data/barcodes.txt`.
 
 #### Processed data
 
