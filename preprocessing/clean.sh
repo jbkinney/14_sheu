@@ -1,6 +1,11 @@
 rm genome/*
+touch genome/testfile
 rm reads/*
+touch reads/testfile
 rm mappings/*
+touch mappings/testfile
 rm pileups/*
+touch pileups/testfile
 rm scripts/*
+touch scripts/testfile
 rm *.txt
